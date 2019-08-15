@@ -2,21 +2,32 @@ import React, { useState, useEffect } from 'react';
 import RoomConfig from '../components/RoomConfig';
 import uuid from 'uuid';
 
-const initialState = [];
-for (let i = 0; i < 4; i += 1) {
-  const isActive = i === 0 ? true : false;
-  initialState.push({ isActive: isActive, numAdults: 1, numChildren: 0 });
-}
+// const initialState = [];
+// for (let i = 0; i < 4; i += 1) {
+//   const isActive = i === 0 ? true : false;
+//   initialState.push({ isActive: isActive, numAdults: 1, numChildren: 0 });
+// }
 
-const Home = () => {
-  const roomConfigs = [];
-  const [configState, setConfigState] = useState(initialState);
-  const [submission, setSubmission] = useState([]);
+const App = () => {
+  const [configState, setConfigState] = useState([]);
 
   useEffect(() => {
-    setConfigState(window.localStorage.getItem('state'));
-    return window.localStorage.getItem('state');
+    const localStorageState = JSON.parse(window.localStorage.getItem('state'));
+    if (localStorageState !== null) {
+      setConfigState(localStorageState);
+    } else {
+      const initialState = [];
+      for (let i = 0; i < 4; i += 1) {
+        const isActive = i === 0 ? true : false;
+        initialState.push({ isActive: isActive, numAdults: 1, numChildren: 0 });
+      }
+      setConfigState(initialState);
+    }
   }, []);
+
+  const handleSubmit = () => {
+    window.localStorage.setItem('state', JSON.stringify(configState));
+  };
 
   const handleCheckboxClick = cardIndex => {
     const newConfigState = configState.map((roomConfigObj, i) => {
@@ -53,7 +64,8 @@ const Home = () => {
     setConfigState(newConfigState);
   };
 
-  for (let i = 0; i < 4; i++) {
+  const roomConfigs = [];
+  for (let i = 0; i < configState.length; i++) {
     roomConfigs.push(
       <RoomConfig
         handleCheckboxClick={handleCheckboxClick}
@@ -69,12 +81,16 @@ const Home = () => {
   return (
     <div id="app">
       <main>{roomConfigs}</main>
-      <button
-        onClick={() => {
-          setSubmission(configState);
-        }}>
-        Submit
-      </button>
+      {configState.length ? (
+        <button
+          onClick={() => {
+            handleSubmit();
+          }}>
+          Submit
+        </button>
+      ) : (
+        ''
+      )}
       <style jsx>{`
         #app {
           background: #f2fcff;
@@ -102,12 +118,19 @@ const Home = () => {
           border: 2px solid lightgray;
         }
         button:hover {
-          background: white;
-          color: black;
+          background: gray;
+          color: white;
+          cursor: pointer;
+        }
+        button:focus {
+          outline: none;
+        }
+        button:active {
+          background: #a5eca1;
         }
       `}</style>
     </div>
   );
 };
 
-export default Home;
+export default App;

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render correctly in "debug" mode 1`] = `
+<div
+  className="jsx-525361608"
+  id="app"
+>
+  <main
+    className="jsx-525361608"
+  />
+  <JSXStyle
+    id="525361608"
+  >
+    #app.jsx-525361608{background:#f2fcff;height:100vh;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-family:-apple-system,BlinkMacSystemFont,Avenir Next,Avenir, Helvetica,sans-serif;}main.jsx-525361608{margin-top:100px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;}button.jsx-525361608{background:white;padding:10px;font-family:inherit;font-size:1.5rem;border-radius:10px;box-shadow:2px 1px 2px 1px rgba(120,120,120,0.2);border:2px solid lightgray;}button.jsx-525361608:hover{background:gray;color:white;cursor:pointer;}button.jsx-525361608:focus{outline:none;}button.jsx-525361608:active{background:#a5eca1;}
+  </JSXStyle>
+</div>
+`;
+
+exports[`RoomConfig should render correctly in "debug" mode 1`] = `
+<div
+  className="jsx-525361608"
+  id="app"
+>
+  <main
+    className="jsx-525361608"
+  />
+  <JSXStyle
+    id="525361608"
+  >
+    #app.jsx-525361608{background:#f2fcff;height:100vh;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-family:-apple-system,BlinkMacSystemFont,Avenir Next,Avenir, Helvetica,sans-serif;}main.jsx-525361608{margin-top:100px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;}button.jsx-525361608{background:white;padding:10px;font-family:inherit;font-size:1.5rem;border-radius:10px;box-shadow:2px 1px 2px 1px rgba(120,120,120,0.2);border:2px solid lightgray;}button.jsx-525361608:hover{background:gray;color:white;cursor:pointer;}button.jsx-525361608:focus{outline:none;}button.jsx-525361608:active{background:#a5eca1;}
+  </JSXStyle>
+</div>
+`;
