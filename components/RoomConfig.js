@@ -4,7 +4,7 @@ const RoomConfig = props => {
   const componentState = props.configState[props.roomNumber - 1];
   return (
     <div
-      data-testid="room-config"
+      data-testid={`room-config-${props.roomNumber - 1}`}
       className={`${'room-container ' +
         (componentState.isActive ? 'active' : 'inactive')}`}>
       <h2>
@@ -34,7 +34,7 @@ const RoomConfig = props => {
             (18+)
           </h3>
           <select
-            data-testid={`dropdown-${props.roomNumber - 1}`}
+            data-testid={`adults-dropdown-${props.roomNumber - 1}`}
             disabled={!componentState.isActive}
             value={componentState.numAdults}
             onChange={val => {
@@ -51,6 +51,7 @@ const RoomConfig = props => {
             (0-17)
           </h3>
           <select
+            data-testid={`children-dropdown-${props.roomNumber - 1}`}
             disabled={!componentState.isActive}
             value={componentState.numChildren}
             onChange={val => {

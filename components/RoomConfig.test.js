@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, cleanup, fireEvent } from '@testing-library/react';
 import RoomConfig from './RoomConfig';
+
 describe('RoomConfig', () => {
   const initialMockState = [];
   for (let i = 0; i < 4; i += 1) {
