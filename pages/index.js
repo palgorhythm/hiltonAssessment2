@@ -79,7 +79,7 @@ const App = () => {
   }
 
   return (
-    <div id="app">
+    <div id="app" data-testid="app">
       <main>{roomConfigs}</main>
       {configState.length ? (
         <button

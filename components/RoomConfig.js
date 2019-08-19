@@ -4,11 +4,13 @@ const RoomConfig = props => {
   const componentState = props.configState[props.roomNumber - 1];
   return (
     <div
+      data-testid="room-config"
       className={`${'room-container ' +
         (componentState.isActive ? 'active' : 'inactive')}`}>
       <h2>
         {props.roomNumber !== 1 ? (
           <input
+            data-testid={`checkbox-${props.roomNumber - 1}`}
             type="checkbox"
             checked={componentState.isActive}
             onChange={() => {
@@ -32,6 +34,7 @@ const RoomConfig = props => {
             (18+)
           </h3>
           <select
+            data-testid={`dropdown-${props.roomNumber - 1}`}
             disabled={!componentState.isActive}
             value={componentState.numAdults}
             onChange={val => {
